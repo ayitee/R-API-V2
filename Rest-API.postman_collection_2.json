@@ -1,0 +1,627 @@
+{
+	"info": {
+		"_postman_id": "c6d0484c-2d09-4889-a1e8-ee4cddf37cb2",
+		"name": "Rest-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39064516"
+	},
+	"item": [
+		{
+			"name": "User management routes",
+			"item": [
+				{
+					"name": "http://localhost:4224/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin_2\",\n  \"password\": \"password123\",\n  \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4224/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin_2\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test if admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "http://localhost:4224/test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categorieds",
+			"item": [
+				{
+					"name": "/categories/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_name\": \"salads\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"category_name\": \"pizza\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/categories/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"categories",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/categories/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"categories",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "get all items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODQ2OTEwLCJleHAiOjE3Mjk4NTA1MTB9.t-1vGVQFIhBTc0wNXTTd4aFI0cr4S46NgvF2uEPanuw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4224/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"items"
+							]
+						},
+						"description": "test if user is connected as an admin"
+					},
+					"response": []
+				},
+				{
+					"name": "item/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/items/42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"items",
+								"42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"item_name\": \"Big Mac\",\n  \"item_description\": \"Double beef patty with lettuce, cheese, pickles, onions, and special sauce on a sesame bun.\",\n  \"item_price\": 5.99,\n  \"category_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"item_name\": \"McWrap\",\n  \"item_description\": \"Grilled chicken with lettuce, tomato, and ranch sauce in a flour tortilla.\",\n  \"item_price\": 6.99,\n  \"category_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/items/51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"items",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5ODcxMDcyLCJleHAiOjE3Mjk4NzQ2NzJ9.cCaSgC6zRoNw5s82M6GXQVczc6sNUfsQ3OxQdiY3FGo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/items/51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"items",
+								"51"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "formulas",
+			"item": [
+				{
+					"name": "get all formula",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5OTQ0MjkxLCJleHAiOjE3Mjk5NDc4OTF9.2jcBQvjBqgMc91p1xfpTAYy4f9nSTl1OUJ9_tMZ_0vo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/formulas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"formulas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get formula by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5OTQ0MjkxLCJleHAiOjE3Mjk5NDc4OTF9.2jcBQvjBqgMc91p1xfpTAYy4f9nSTl1OUJ9_tMZ_0vo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/formulas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"formulas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add formula",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5OTQ0MjkxLCJleHAiOjE3Mjk5NDc4OTF9.2jcBQvjBqgMc91p1xfpTAYy4f9nSTl1OUJ9_tMZ_0vo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"formula_name\": \"Lunch Special\",\n  \"formula_price\": 15.99,\n  \"category_ids\": [1, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4224/formulas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"formulas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete formula",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzI5OTQ0MjkxLCJleHAiOjE3Mjk5NDc4OTF9.2jcBQvjBqgMc91p1xfpTAYy4f9nSTl1OUJ9_tMZ_0vo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4224/formulas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4224",
+							"path": [
+								"formulas",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
